@@ -14,6 +14,17 @@ Telegram bot to download Songs from Tidal.
 
 **⚠️ Download Feature Won't Work Without A Tidal Premium Account ⚠️**
 
+## Add New Screen
+
+```
+sudo apt install tmux
+tmux ls
+tmux new -s session_name
+tmux a -t session_name
+tmux kill-session -t session_name
+
+```
+
 ## Deploy VPS
 
 Change.env add variable
