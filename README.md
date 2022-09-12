@@ -51,7 +51,8 @@ python -m bot
 - `TIDAL_REGION` - Country code for Tidal Song search. (In international format eg:IN)
 - `TIDAL_SEARCH_LIMIT` - Limit the number of search results.
 - `BOT_USERNAME` - Username of your bot.
-- `DATABASE_URL` - Postgres Database URL
+- `DATABASE_URL` - Postgres Database URL (Get it from [Elephantsql](https://www.elephantsql.com/))
+
 
 **-> Optional Variables**
 
