@@ -14,17 +14,6 @@ Telegram bot to download Songs from Tidal.
 
 **⚠️ Download Feature Won't Work Without A Tidal Premium Account ⚠️**
 
-## Add New Screen
-
-```
-sudo apt install tmux
-tmux ls
-tmux new -s session_name
-tmux a -t session_name
-tmux kill-session -t session_name
-
-```
-
 ## Variables Details
 
 **-> Required Variables**
@@ -64,9 +53,20 @@ shell - Run shell cmds [ADMIN ONLY]
 index - Index Search channel with Songs [ADMIN ONLY]
 authed - Shows list of chats where bot is allowed to run
 ```
-## Deploy VPS
+## Deploy VPS METHOD-1
 
 Change.env add variable
+
+## Add New Screen
+
+```
+sudo apt install tmux
+tmux ls
+tmux new -s session_name
+tmux a -t session_name
+tmux kill-session -t session_name
+
+```
 
 ```
 
@@ -85,7 +85,7 @@ python -m bot
 ```
 - For Database URL use Heroku Postgres (if on Heroku) or ElephantSQL
 
-3. **Deploying on VPS Using Docker**
+## Deploy VPS METHOD-2 (STABIL) AND BASIC
 
 - Start Docker daemon (skip if already running), if installed by snap then use 2nd command:
     
