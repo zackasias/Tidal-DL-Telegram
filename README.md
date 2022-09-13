@@ -116,28 +116,3 @@ python -m bot
 - To delete the images:
 
         sudo docker image prune -a
-
-4. **Deploying on VPS Using docker-compose**
-
-**NOTE**: If you want to use port other than 80, change it in docker-compose.yml
-
-```
-sudo apt install docker-compose
-```
-- Build and run Docker image:
-```
-sudo docker-compose up
-```
-- After editing files with nano for example (nano start.sh):
-```
-sudo docker-compose up --build
-```
-- To stop the image:
-```
-sudo docker-compose stop
-```
-- To run the image:
-```
-sudo docker-compose start
-
-```
