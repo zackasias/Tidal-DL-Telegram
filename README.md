@@ -25,29 +25,6 @@ tmux kill-session -t session_name
 
 ```
 
-## Deploy VPS
-
-Change.env add variable
-
-```
-
-sudo apt install python3-virtualenv
-
-virtualenv -p python3 VENV
-
-. ./VENV/bin/activate
-
-pip install -r requirements.txt
-
-sudo apt-get install build-dep python-psycopg2
-
-pip install psycopg2-binary 
-
-python -m bot
-
-```
-- For Database URL use Heroku Postgres (if on Heroku) or ElephantSQL
-
 ## Variables Details
 
 **-> Required Variables**
@@ -86,4 +63,81 @@ add_sudo - Add a user as Admin [ADMIN ONLY]
 shell - Run shell cmds [ADMIN ONLY]
 index - Index Search channel with Songs [ADMIN ONLY]
 authed - Shows list of chats where bot is allowed to run
+```
+## Deploy VPS
+
+Change.env add variable
+
+```
+
+sudo apt install python3-virtualenv
+
+virtualenv -p python3 VENV
+
+. ./VENV/bin/activate
+
+pip install -r requirements.txt
+
+pip install psycopg2-binary 
+
+python -m bot
+
+```
+- For Database URL use Heroku Postgres (if on Heroku) or ElephantSQL
+
+3. **Deploying on VPS Using Docker**
+
+- Start Docker daemon (skip if already running), if installed by snap then use 2nd command:
+    
+        sudo dockerd
+        sudo snap start docker
+
+     Note: If not started or not starting, run the command below then try to start.
+
+        sudo apt install docker.io
+
+- Build Docker image:
+
+        sudo docker build . -t tidal-dl-bot
+
+- Run the image:
+
+        sudo docker run tidal-dl-bot
+
+- To stop the image:
+
+        sudo docker ps
+        sudo docker stop id
+
+- To clear the container:
+
+        sudo docker container prune
+
+- To delete the images:
+
+        sudo docker image prune -a
+
+4. **Deploying on VPS Using docker-compose**
+
+**NOTE**: If you want to use port other than 80, change it in docker-compose.yml
+
+```
+sudo apt install docker-compose
+```
+- Build and run Docker image:
+```
+sudo docker-compose up
+```
+- After editing files with nano for example (nano start.sh):
+```
+sudo docker-compose up --build
+```
+- To stop the image:
+```
+sudo docker-compose stop
+```
+- To run the image:
+```
+sudo docker-compose start
+
 ```
