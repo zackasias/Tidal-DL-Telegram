@@ -1,0 +1,36 @@
+name: Deploy to Heroku
+
+on: workflow_dispatch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
+          usedocker: true
+          docker_heroku_process_type: worker
+          stack: "container"
+          region: "us"
+        env:
+          HD_ADMINS: ${{secrets.ADMINS}}
+          HD_ALLOW_DUMP: ${{secrets.ALLOW_DUMP}}
+          HD_ALLOW_OTHER_LINKS: ${{secrets.ALLOW_OTHER_LINKS}}
+          HD_API_HASH: ${{secrets.API_HASH}}
+          HD_APP_ID: ${{secrets.APP_ID}}
+          HD_AUTH_CHAT: ${{secrets.AUTH_CHAT}}
+          HD_AUTH_USERS: ${{secrets.AUTH_USERS}}
+          HD_ENV: ${{secrets.ENV}}
+          HD_INLINE_THUMB: ${{secrets.INLINE_THUMB}}
+          HD_IS_BOT_PUBLIC: ${{secrets.IS_BOT_PUBLIC}}
+          HD_LOG_CHANNEL_ID: ${{secrets.LOG_CHANNEL_ID}}
+          HD_MUSIC_CHANNEL_LINK: ${{secrets.MUSIC_CHANNEL_LINK}}
+          HD_SEARCH_CHANNEL: ${{secrets.SEARCH_CHANNEL}}
+          HD_TG_BOT_TOKEN: ${{secrets.TG_BOT_TOKEN}}
+          HD_TIDAL_REGION: ${{secrets.TIDAL_REGION}}
+          HD_TIDAL_SEARCH_LIMIT: ${{secrets.TIDAL_SEARCH_LIMIT}}
+          HD_USER_SESSION: ${{secrets.USER_SESSION}}
