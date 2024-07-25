@@ -8,7 +8,7 @@
     "albumFolderFormat": "{ArtistName}/{Flag} {AlbumTitle} [{AlbumID}] [{AlbumYear}]", 
     "apiKeyIndex": 4, 
     "artistBeforeTitle": false, 
-    "audioQuality": "Master", 
+    "audioQuality": "HiFi", 
     "checkExist": false, 
     "downloadPath": "./bot/DOWNLOADS", 
     "includeEP": true, 
